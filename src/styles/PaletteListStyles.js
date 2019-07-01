@@ -1,20 +1,29 @@
 import sizes from './sizes';
-import bg from './bg.svg'
+import bg from './bg.svg';
 
 export default {
-	root      : {
-		height          : '100vh',
-		display         : 'flex',
-		alignItems      : 'flex-start',
-		justifyContent  : 'center',
-		/* background by SVGBackgrounds.com */
-		backgroundColor : '#394bad',
-		backgroundImage : `url(${bg})`,
-		backgroundAttachment: 'fixed',
-		overflow: 'auto'
+	'@global' : {
+		'.fade-exit'        : {
+			opacity : 1
+		},
+		'.fade-exit-active' : {
+			opacity    : 0,
+			transition : 'opacity 500ms ease-out'
+		}
 	},
-	heading : {
-		fontSize: '2rem'
+	root      : {
+		height               : '100vh',
+		display              : 'flex',
+		alignItems           : 'flex-start',
+		justifyContent       : 'center',
+		/* background by SVGBackgrounds.com */
+		backgroundColor      : '#394bad',
+		backgroundImage      : `url(${bg})`,
+		backgroundAttachment : 'fixed',
+		overflow             : 'auto'
+	},
+	heading   : {
+		fontSize : '2rem'
 	},
 	container : {
 		width              : '50%',
