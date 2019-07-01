@@ -3,7 +3,7 @@ import sizes from './sizes';
 const styles = {
 	root       : {
 		width              : '20%',
-		height             : '25%',
+		height             : '25.1%',
 		margin             : '0 auto',
 		padding            : '0',
 		display            : 'inline-block',
