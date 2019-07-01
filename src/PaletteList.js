@@ -11,10 +11,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import CheckIcon from '@material-ui/icons/Check';
 import CloseIcon from '@material-ui/icons/Close';
-import styles from './styles/PaletteListStyles';
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import { withStyles } from '@material-ui/styles';
+import styles from './styles/PaletteListStyles';
 
 class PaletteList extends Component {
 	constructor(props) {
@@ -43,8 +43,8 @@ class PaletteList extends Component {
 		this.closeDialog();
 	}
 	render() {
-		const { palettes, classes, deletePalette } = this.props;
-		const { openDeleteDialog, deletingId } = this.state;
+		const { palettes, classes } = this.props;
+		const { openDeleteDialog } = this.state;
 		return (
 			<div className={classes.root}>
 				<div className={classes.container}>
@@ -63,7 +63,6 @@ class PaletteList extends Component {
 								<MiniPalette
 									{...palette}
 									goToPalette={this.goToPalette}
-									// handleDelete={deletePalette}
 									openDialog={this.openDialog}
 									key={palette.id}
 									id={palette.id}
@@ -74,7 +73,7 @@ class PaletteList extends Component {
 				</div>
 				<Dialog
 					open={openDeleteDialog}
-					aria-labelled-by="delete-dialog-title"
+					aria-labelledby="delete-dialog-title"
 					onClose={this.closeDialog}
 				>
 					<DialogTitle id="delete-dialog-title">
